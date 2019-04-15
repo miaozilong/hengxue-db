@@ -23,7 +23,11 @@ public class Country {
 	private String countryName;
 	@Id
 	private String countryId;
+<<<<<<< HEAD
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "city_id",foreignKey = @ForeignKey(name = "none",value = ConstraintMode.NO_CONSTRAINT))
 	private City city;
+=======
+	private String cityId;
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 }

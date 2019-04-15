@@ -5,8 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+<<<<<<< HEAD
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+=======
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 import javax.persistence.Id;
 
 /**
@@ -21,8 +24,13 @@ import javax.persistence.Id;
 @Entity
 public class ExamSchool {
 	@Id
+<<<<<<< HEAD
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer examSchoolId;
 	private String examSchoolName;
 
+=======
+	private String examSchoolId;
+	private String examSchoolName;
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 }

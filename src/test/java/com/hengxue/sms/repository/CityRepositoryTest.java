@@ -30,10 +30,25 @@ import static org.junit.Assert.*;
 public class CityRepositoryTest {
 	@Autowired
 	private CityRepository cityRepository;
+<<<<<<< HEAD
 	@Test
 	public void testQueryCities(){
 		List<City> cityList = cityRepository.findAllCities(0, 10);
 		System.out.println(cityList);
 
+=======
+	@Autowired
+	private ProvinceRepository provinceRepository;
+	@Test
+	public void testQueryCities(){
+		List<City> cityList = cityRepository.findAllCities(0, 10);
+		Set<Province> provinces = cityList.stream().map(e -> {
+			String provinceId = e.getProvinceId();
+			Optional<Province> provinceOptional = provinceRepository.findById(provinceId);
+			return provinceOptional.get();
+		}).collect(Collectors.toSet());
+		System.out.println(cityList);
+		System.out.println(provinces);
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 	}
 }

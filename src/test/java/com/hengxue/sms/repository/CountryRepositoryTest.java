@@ -26,6 +26,7 @@ import static org.junit.Assert.*;
 public class CountryRepositoryTest {
 	@Autowired
 	private CountryRepository countryRepository;
+<<<<<<< HEAD
 	@Test
 	public void testQueryCounties(){
 		List<Country> countryList = countryRepository.findAllCountries(0, 10);
@@ -34,5 +35,19 @@ public class CountryRepositoryTest {
 			return e.getCity();
 		}).collect(Collectors.toSet());
 		System.out.println(cities);
+=======
+	@Autowired
+	private CityRepository cityRepository;
+	@Test
+	public void testQueryCounties(){
+		List<Country> countryList = countryRepository.findAllCountries(0, 10);
+		Set<City> citySet = countryList.stream().map(e -> {
+			System.out.println(e);
+			Optional<City> optionalCity = cityRepository.findById(e.getCityId());
+			City city = optionalCity.get();
+			return city;
+		}).collect(Collectors.toSet());
+		System.out.println(citySet);
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 	}
 }

@@ -31,12 +31,16 @@ public class ProvinceController {
 	public Map<String,Object> getAllProvince(HttpServletRequest request){
 		int pageNum = HttpServletRequestUtil.getInt(request, "pageNum");
 		int pageSize = HttpServletRequestUtil.getInt(request, "pageSize");
+<<<<<<< HEAD
 		if (pageNum < 0 ){
 			pageNum = 1;
 		}
 		if (pageSize < 0){
 			pageSize = 10;
 		}
+=======
+		Pageable pageable = PageRequest.of(pageNum,pageSize);
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 		Map<String,Object> modelMap = Collections.synchronizedMap(new HashMap<>(6));
 		List<Province> provinces = provinceService.getProvinces(pageNum,pageSize);
 		if (provinces != null) {

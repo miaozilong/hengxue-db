@@ -11,5 +11,9 @@ import org.springframework.stereotype.Repository;
  * @desc:
  */
 @Repository
+<<<<<<< HEAD
 public interface ExamSchoolRepository extends JpaRepository<ExamSchool,Integer> {
+=======
+public interface ExamSchoolRepository extends JpaRepository<ExamSchool,String> {
+>>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 }
