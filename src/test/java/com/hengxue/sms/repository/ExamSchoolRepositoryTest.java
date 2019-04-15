@@ -25,7 +25,7 @@ public class ExamSchoolRepositoryTest {
 	@Test
 	public void testInsertExamSchool(){
 		ExamSchool examSchool = new ExamSchool();
-		examSchool.setExamSchoolId(UUID.randomUUID().toString());
+
 		examSchool.setExamSchoolName("南京政治学院");
 		ExamSchool school = examSchoolRepository.save(examSchool);
 		System.out.println(school);

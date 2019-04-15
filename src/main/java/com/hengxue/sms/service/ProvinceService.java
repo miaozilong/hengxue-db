@@ -12,5 +12,5 @@ import java.util.List;
  * @desc:
  */
 public interface ProvinceService {
-	List<Province> getProvinces(int pageNum,int pageSize);
+	List<Province> getProvinces();
 }

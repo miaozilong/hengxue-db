@@ -1,12 +1,8 @@
 package com.hengxue.sms.controller;
 
-import com.hengxue.sms.domain.Province;
-import com.hengxue.sms.service.ProvinceService;
-import com.hengxue.sms.util.HttpServletRequestUtil;
+import com.hengxue.sms.domain.ExamSchool;
+import com.hengxue.sms.service.ExamSchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,26 +14,26 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Unruly Wind on 2019/4/14/014.
+ * Created by Unruly Wind on 2019/4/15/015.
  *
  * @author BlueMelancholy
  * @desc:
  */
 @RestController
-@RequestMapping("/province")
-public class ProvinceController {
+@RequestMapping("/examschool")
+public class ExamSchoolController {
 	@Autowired
-	private ProvinceService provinceService;
-	@GetMapping("/getallprovince")
-	public Map<String,Object> getAllProvince(){
+	private ExamSchoolService examSchoolService;
+	@GetMapping("/getexamschools")
+	public Map<String,Object> getExamSchools(){
 		Map<String,Object> modelMap = Collections.synchronizedMap(new HashMap<>(6));
-		List<Province> provinces = provinceService.getProvinces();
-		if (provinces != null) {
-			modelMap.put("provinces",provinces);
+		List<ExamSchool> examSchoolList = examSchoolService.getExamSchools();
+		if (examSchoolList != null && examSchoolList.size() > 0){
 			modelMap.put("success",true);
+			modelMap.put("examSchoolList",examSchoolList);
 		}else {
 			modelMap.put("success",false);
-			modelMap.put("errMsg","未找到省份");
+			modelMap.put("errMsg","未找到报考学校");
 		}
 		return modelMap;
 	}

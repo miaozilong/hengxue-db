@@ -36,21 +36,21 @@ public class PayRegistration {
 	//交费说明
 	private String payInstruction;
 	//第一次收费
-	private Date firstCharge;
+	private String firstCharge;
 	//第二次收费
-	private Date secondCharge;
+	private String secondCharge;
 	//第三次收费
-	private Date thirdCharge;
+	private String thirdCharge;
 	//第四次收费
-	private Date fourthCharge;
+	private String fourthCharge;
 	//第五次收费
-	private Date fifthCharge;
+	private String fifthCharge;
 	//第一次收费日期
-	private Date fisrtChargeTime;
+	private Date firstChargeTime;
 	//第二次收费日期
 	private Date secondChargeTime;
 	//第三次收费日期
-	private Date thirdtChargeTime;
+	private Date thirdChargeTime;
 	//第四次收费日期
 	private Date fourthChargeTime;
 	//第五次收费日期

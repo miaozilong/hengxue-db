@@ -24,12 +24,7 @@ public class City implements Serializable {
 	@Id
 	@Column(name = "city_id")
 	private String cityId;
-<<<<<<< HEAD
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "province_id",foreignKey = @ForeignKey(name = "none",value = ConstraintMode.NO_CONSTRAINT))
 	private Province province;
-=======
-	@Column(name = "province_id")
-	private String provinceId;
->>>>>>> 95a4e1aa2f387f246ea1660595e83ed52d760d0b
 }

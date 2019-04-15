@@ -1,6 +1,6 @@
 package com.hengxue.sms.service;
 
-import com.hengxue.sms.domain.Attribute;
+import com.hengxue.sms.domain.City;
 
 import java.util.List;
 
@@ -10,6 +10,6 @@ import java.util.List;
  * @author BlueMelancholy
  * @desc:
  */
-public interface AttributeService {
-	List<Attribute> getAttributes();
+public interface CityService {
+	List<City> getAllCitiesByProvinceId(String provinceId);
 }

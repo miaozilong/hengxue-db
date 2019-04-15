@@ -4,6 +4,7 @@ import com.hengxue.sms.domain.Attribute;
 import com.hengxue.sms.service.AttributeService;
 import com.hengxue.sms.util.HttpServletRequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,18 +25,10 @@ import java.util.Map;
 public class AttributeController {
 	@Autowired
 	private AttributeService attributeService;
-	@RequestMapping("/getattributes")
-	public Map<String,Object> getAttributes(HttpServletRequest request){
-		int pageNum = HttpServletRequestUtil.getInt(request, "pageNum");
-		int pageSize = HttpServletRequestUtil.getInt(request, "pageSize");
-		if (pageNum < 0){
-			pageNum = 1;
-		}
-		if (pageSize < 0){
-			pageSize = 10;
-		}
+	@GetMapping("/getattributes")
+	public Map<String,Object> getAttributes(){
 		Map<String,Object> modelMap = Collections.synchronizedMap(new HashMap<>(6));
-		List<Attribute> attributeList = attributeService.getAttributes(pageNum, pageSize);
+		List<Attribute> attributeList = attributeService.getAttributes();
 			if (attributeList != null && attributeList.size() > 0) {
 				modelMap.put("attributeList",attributeList);
 				modelMap.put("success",true);

@@ -26,13 +26,9 @@ public class ProvinceServiceImpl implements ProvinceService {
 	@Autowired
 	private ProvinceRepository provinceRepository;
 	@Override
-	public List<Province> getProvinces(int pageNum,int pageSize) {
+	public List<Province> getProvinces() {
 		Sort sort = Sort.by(Sort.Direction.DESC,"provinceId");
-		Pageable pageable = PageRequest.of(PageCalculator.calculateRowIndex(pageNum,pageSize),pageSize,sort);
-		Page<Province> provinces = provinceRepository.findAll(pageable);
-		if (provinces != null){
-			return provinces.getContent();
-		}
-		throw new ProvinceException("未找到省份");
+		List<Province> provinceList = provinceRepository.findAll(sort);
+		return provinceList;
 	}
 }
